@@ -1,0 +1,15 @@
+#!/bin/bash
+# optimizaciones
+if [ $USER != root ]; then
+echo "Error: debes ser root"
+exit 0
+fi
+echo "deb http://liquorix.net/debian sid main" >> /etc/apt/sources.list
+add-apt-repository -y ppa:ubuntu-toolchain-r/test
+apt-get update
+apt-get -y --force-yes install liquorix-keyrings gcc-4.7
+apt-get update
+apt-get -y install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
+clear
+echo Finalizado se recomienda reiniciar, elaborado para ubuntu 64 bits por sinfallas.
+exit 0
