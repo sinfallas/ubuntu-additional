@@ -68,7 +68,6 @@ add-apt-repository -y ppa:alexmurray/indicator-sensors-daily
 add-apt-repository -y ppa:team-xbmc/ppa
 add-apt-repository -y ppa:webupd8team/tor-browser
 add-apt-repository -y ppa:vase/ppa
-add-apt-repository -y ppa:webupd8team/unstable
 echo "deb http://download.virtualbox.org/virtualbox/debian precise contrib" >> /etc/apt/sources.list
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 wget --output-document=/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/$(lsb_release -cs).list

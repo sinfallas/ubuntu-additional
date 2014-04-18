@@ -20,18 +20,11 @@ echo "tmpfs /var/cache/samba tmpfs noatime,nodev 0 0" >> /etc/fstab
 echo "tmpfs /var/log tmpfs noatime,nodev 0 0" >> /etc/fstab
 echo "tmpfs /var/spool tmpfs noatime,nodev 0 0" >> /etc/fstab
 echo "tmpfs /var/tmp tmpfs noexec,nosuid,noatime,nodev 0 0" >> /etc/fstab
-#echo "tmpfs /home/$nombre/.cache tmpfs noatime,nodev 0 0" >> /etc/fstab
-#echo "tmpfs /home/$nombre/.thumbnails tmpfs noatime,nodev 0 0" >> /etc/fstab
 echo 'INTEL_BATCH="1"' >> /etc/environment
 echo "options rtl8192ce ips=0 swenc=1 fwlps=0 swlps=0" >> /etc/modprobe.d/rtl8192ce.conf
 sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="elevator=deadline drm.vblankoffdelay=1 i915.i915_enable_fbc=1 i915.i915_enable_rc6=1 i915.lvds_downclock=1 nordrand panic=10 quiet splash"/g' /etc/default/grub
-echo -e 'cat << EOF'
-'	set superusers="sinfallas"'"\n"'    	password_pbkdf2 sinfallas  grub.pbkdf2.sha512.10000.2FCE22FD822436FBA45D8776887B545011776C04FA66BD8F05A8AB927DA38B707A8286237518BE79DB68348B48B00A2ECC4AA0918EA10CAC11C3DE7CB36FB7EE.3C0AEF540FE5C4C5C284A27C7049D244948D62979657B7D49C347D5F5FE422CC0FA101B5359205011974D587575B6CCF2385C82B98639F7CAD9E44F5B4BB049B'"\n"'EOF' >> /etc/grub.d/00_header 
-sed -i 's/  printf "menuentry '${title}' ${CLASS} {\n" "${os}" "${version}"/  printf "menuentry '${title}' ${CLASS} --users sinfallas {\n" "${os}" "${version}"/g' /etc/grub.d/10_linux
 update-grub2
-sed -i 's/AVAHI_DAEMON_DETECT_LOCAL=1/AVAHI_DAEMON_DETECT_LOCAL=0/g' /etc/default/avahi-daemon
-sed -i 's/127.0.0.1	localhost/127.0.0.1	localhost $nombre/g' /etc/hosts
-echo "127.0.1.1   geoip.ubuntu.com" >> /etc/hosts
+sed -i 's/127.0.0.1	localhost/127.0.0.1	localhost $(hostname)/g' /etc/hosts
 echo -e "[Re-enable hibernate by default]""\n""Identity=unix-user:*""\n""Action=org.freedesktop.upower.hibernate""\n""ResultActive=yes" >> /etc/polkit-1/localauthority/50-local.d/com.ubuntu.desktop.pkla
 cd /etc/xdg/autostart/
 sed --in-place 's/NoDisplay=true/NoDisplay=false/g' *.desktop
@@ -49,7 +42,7 @@ add-apt-repository -y ppa:danielrichter2007/grub-customizer
 add-apt-repository -y ppa:nilarimogard/webupd8
 add-apt-repository -y ppa:tualatrix/ppa
 add-apt-repository -y ppa:webupd8team/unstable
-add-apt-repository -y ppa:webupd8team/jupiter
+# add-apt-repository -y ppa:webupd8team/jupiter
 add-apt-repository -y ppa:a-v-shkop/chromium
 add-apt-repository -y ppa:webupd8team/y-ppa-manager
 add-apt-repository -y ppa:ubuntu-mozilla-security/ppa
@@ -68,16 +61,15 @@ add-apt-repository -y ppa:alexmurray/indicator-sensors-daily
 add-apt-repository -y ppa:team-xbmc/ppa
 add-apt-repository -y ppa:webupd8team/tor-browser
 add-apt-repository -y ppa:vase/ppa
-add-apt-repository -y ppa:webupd8team/unstable
-echo "deb http://download.virtualbox.org/virtualbox/debian precise contrib" >> /etc/apt/sources.list
+# echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
-wget --output-document=/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/$(lsb_release -cs).list
+# wget --output-document=/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/$(lsb_release -cs).list
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - 
-wget -q -O - http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc | apt-key add -
-wget -q -O - http://deb.playonlinux.com/public.gpg | apt-key add -
-wget http://deb.playonlinux.com/playonlinux_precise.list -O /etc/apt/sources.list.d/playonlinux.list
-apt-get -q update
-apt-get --allow-unauthenticated -y install medibuntu-keyring
+# wget -q -O - http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc | apt-key add -
+# wget -q -O - http://deb.playonlinux.com/public.gpg | apt-key add -
+# wget http://deb.playonlinux.com/playonlinux_precise.list -O /etc/apt/sources.list.d/playonlinux.list
+# apt-get -q update
+# apt-get --allow-unauthenticated -y install medibuntu-keyring
 apt-get -q update
 apt-get -q -f -y --force-yes dist-upgrade
 
@@ -181,44 +173,12 @@ echo "alias cp='gcp'" >> $casa/.bashrc
 echo "alias cp='gcp'" >> /root/.bashrc
 echo "alias update='apt-get update && apt-get -y dist-upgrade'" >> /root/.bashrc
 echo "alias subir='git add . && git commit -a && git push --all'" >> $casa/.bashrc
-sed -i 's/memcached = 0/memcached = 30/g' /etc/preload.conf
 sed -i 's/PRELINKING=unknown/PRELINKING=yes/g' /etc/default/prelink
 sed -i 's/PRELINK_OPTS=-mR/PRELINK_OPTS=-amR/g' /etc/default/prelink
 prelink -amvR
 /etc/cron.daily/prelink
 /usr/share/doc/libdvdread4/install-css.sh
 
-mv -v /etc/xdg/autostart/zeitgeist-datahub.desktop /etc/xdg/autostart/zeitgeist-datahub.desktop-inactive
-mv -v /usr/sbin/modem-manager /usr/sbin/modem-manager-old
-mv -v /usr/sbin/aptd /usr/sbin/aptd-old
-mv -v /usr/bin/update-notifier /usr/bin/update-notifier-old
-mv -v /usr/bin/bluetooth-applet /usr/bin/bluetooth-applet-old
-mv -v /usr/bin/blueman-applet /usr/bin/blueman-applet-old
-mv -v /usr/lib/indicator-printers/indicator-printers-service /usr/lib/indicator-printers/indicator-printers-service-old
-mv -v /usr/lib/unity-lens-music/unity-music-daemon /usr/lib/unity-lens-music/unity-music-daemon.old
-mv -v /usr/lib/unity-lens-music/unity-musicstore-daemon /usr/lib/unity-lens-music/unity-musicstore-daemon.old
-mv -v /usr/share/oneconf/oneconf-service /usr/share/oneconf/oneconf-service-old 
-cd /etc/init.d
-chmod -v -x bluetooth
-chmod -v -x cups
-chmod -v -x gpsd
-chmod -v -x modemmanager
-chmod -v -x saned
-chmod -v -x speech-dispatcher
-chmod -v -x brltty
-chmod -v -x kdm
-update-rc.d -f brltty remove
-update-rc.d -f kdm remove
-update-rc.d -f saned remove
-update-rc.d -f gpsd remove
-update-rc.d -f bluetooth remove
-update-rc.d -f speech-dispatcher remove
-sed -i 's/RUN="no"/RUN="yes"/g' /etc/default/arpon
-sed -i 's/# DAEMON_OPTS="-q -f /var/log/arpon/arpon.log -g -s"/DAEMON_OPTS="-q -f /var/log/arpon/arpon.log -g -s"/g' /etc/default/arpon
-echo -e "#! /bin/sh""\n""### BEGIN INIT INFO""\n""# Provides:          modulos""\n""# Required-Start:""\n""# Required-Stop:""\n""# Default-Start:     2 3 4 5""\n""# Default-Stop:""\n""# Short-Description: Limpieza""\n""### END INIT INFO""\n""echo always > /sys/kernel/mm/transparent_hugepage/enabled""\n""echo 20000 > /sys/kernel/mm/transparent_hugepage/khugepaged/pages_to_scan""\n""echo 20000 > /sys/kernel/mm/ksm/pages_to_scan""\n""stop avahi-daemon""\n""stop cups""\n""# stop bluetooth""\n""stop kdm""\n""stop qemu-kvm""\n""stop winbind""\n""stop munin-node""\n""stop ssh""\n""stop uml-utilities""\n""stop openvswitch-switch""\n""/etc/init.d/xend stop""\n""/etc/init.d/xcp-squeezed stop""\n""/etc/init.d/xcp-xapi stop""\n""/etc/init.d/xcp-fe stop""\n""/etc/init.d/xcp-v6d stop""\n""/etc/init.d/xcp-networkd stop""\n""rmmod ip6table_filter""\n""rmmod ip6_tables""\n""stop modemmanager""\n""rmmod rfcomm""\n""rmmod bnep""\n""rmmod bluetooth""\n""rmmod msdos""\n""stop libvirt-bin""\n""#ifconfig wlan0 mtu 1492""\n""#ifconfig eth0 mtu 1492""\n""#ifconfig br0 mtu 1492""\n""#ifconfig tap0 mtu 1492""\n""sysctl -p""\n""exit 0" >> /etc/init.d/modulos
-chmod -v +x /etc/init.d/modulos
-update-rc.d modulos start 96 2 3 4 5 .
-cd $casa
 apt-get clean
 apt-get autoclean
 apt-get -y autoremove
