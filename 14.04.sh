@@ -42,7 +42,7 @@ add-apt-repository -y ppa:danielrichter2007/grub-customizer
 add-apt-repository -y ppa:nilarimogard/webupd8
 add-apt-repository -y ppa:tualatrix/ppa
 add-apt-repository -y ppa:webupd8team/unstable
-# add-apt-repository -y ppa:webupd8team/jupiter
+echo "deb http://ppa.launchpad.net/jolicloud-team/ppa/ubuntu raring main" >> /etc/apt/sources.list
 add-apt-repository -y ppa:a-v-shkop/chromium
 add-apt-repository -y ppa:webupd8team/y-ppa-manager
 add-apt-repository -y ppa:ubuntu-mozilla-security/ppa
