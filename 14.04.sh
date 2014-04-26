@@ -63,13 +63,13 @@ add-apt-repository -y ppa:webupd8team/tor-browser
 add-apt-repository -y ppa:vase/ppa
 # echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
-# wget --output-document=/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/$(lsb_release -cs).list
+wget --output-document=/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/$(lsb_release -cs).list
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - 
-# wget -q -O - http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc | apt-key add -
+wget -q -O - http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc | apt-key add -
 # wget -q -O - http://deb.playonlinux.com/public.gpg | apt-key add -
 # wget http://deb.playonlinux.com/playonlinux_precise.list -O /etc/apt/sources.list.d/playonlinux.list
-# apt-get -q update
-# apt-get --allow-unauthenticated -y install medibuntu-keyring
+apt-get -q update
+apt-get --allow-unauthenticated -y install medibuntu-keyring
 apt-get -q update
 apt-get -q -f -y --force-yes dist-upgrade
 
@@ -124,28 +124,6 @@ echo -e "mount c $casa/Dropbox/dosbox""\n""c:""\n""cls" >> $casa/.dosbox/dosbox-
 apt-get -q -f -y --force-yes install python-software-properties pkg-config software-properties-common xbmc
 
 apt-get -q -f -y --force-yes install linux-lowlatency virtualbox-4.3 apparmor-utils kvm qemu-kvm-extras qemu qemu-kvm qemu-kvm-spice grub-firmware-qemu qemu-system qemu-user qemuctl vde2 spice-client-gtk python-spice-client-gtk virt-manager virt-goodies virt-viewer bridge-utils
-
-# xcp-xapi xen-tools xenwatch openvswitch-switch openvswitch-datapath-source ubuntu-vm-builder randomize-lines uml-utilities socat
-#apt-get -s install umview umview-mod-umfuseiso9660 umview-mod-umfuseext2 umview-mod-umlwip umview-mod-umdevtap libiso9660-dev libfuse-dev libpcap-dev
-
-# xen
-#sed -i 's/\#\(xend-http-server no\)/\(xend-http-server yes\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-unix-server no\)/\(xend-unix-server yes\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-port            8000\)/\(xend-port            8000\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(network-script network-bridge\)/\(network-script network-bridge\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(logfile \/var\/log\/xen\/xend.log\)/\(logfile \/var\/log\/xen\/xend.log\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-tcp-xmlrpc-server no\)/\(xend-tcp-xmlrpc-server yes\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-tcp-xmlrpc-server-port 8006\)/\(xend-tcp-xmlrpc-server-port 8006\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-unix-xmlrpc-server yes\)/\(xend-unix-xmlrpc-server yes\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-unix-path \/var\/lib\/xend\/xend-socket\)/\(xend-unix-path \/var\/lib\/xend\/xend-socket\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-tcp-xmlrpc-server-address 'localhost'\)/\(xend-tcp-xmlrpc-server-address 'localhost'\)/g' /etc/xen/xend-config.sxp
-#addgroup libvirtd
-#adduser $nombre libvirtd
-#mkdir -p /usr/lib64
-#ln -s /usr/lib/xen-4.1 /usr/lib/xen
-#ln -s /usr/lib/xen-4.1 /usr/lib64/xen
-#echo export VIRSH_DEFAULT_CONNECT_URI=xen:/// >> $casa/.bashrc
-#module-assistant auto-install openvswitch-datapath
 
 # virtualbox
 addgroup vboxusers
