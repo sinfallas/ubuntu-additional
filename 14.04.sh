@@ -105,7 +105,6 @@ apt-get -q -f -y --force-yes install gnome-session-fallback gnome gnome-tweak-to
 apt-get -q -f -y --force-yes install enlightenment
 
 apt-get -q -f -y --force-yes install htop iotop iftop powertop jupiter lm-sensors hddtemp indicator-sensors
-echo "coretemp" >> /etc/modules
 
 apt-get -q -f -y --force-yes install playonlinux dosbox freeciv-client-gtk fceux curl pcsxr mupen64plus mupen64plus-extraplugins cutemupen
 echo export WINEARCH=win32 >> $casa/.bashrc
@@ -123,7 +122,7 @@ echo -e "mount c $casa/Dropbox/dosbox""\n""c:""\n""cls" >> $casa/.dosbox/dosbox-
 
 apt-get -q -f -y --force-yes install python-software-properties pkg-config software-properties-common xbmc
 
-apt-get -q -f -y --force-yes install linux-lowlatency virtualbox-4.3 apparmor-utils kvm qemu-kvm-extras qemu qemu-kvm qemu-kvm-spice grub-firmware-qemu qemu-system qemu-user qemuctl vde2 spice-client-gtk python-spice-client-gtk virt-manager virt-goodies virt-viewer bridge-utils
+apt-get -q -f -y --force-yes install linux-lowlatency virtualbox-4.3 apparmor-utils qemu qemu-kvm qemu-kvm-spice grub-firmware-qemu qemu-system qemu-user qemuctl vde2 spice-client-gtk python-spice-client-gtk virt-manager virt-goodies virt-viewer bridge-utils
 
 # virtualbox
 addgroup vboxusers
