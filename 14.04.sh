@@ -148,7 +148,7 @@ xdg-mime default firefox.desktop x-scheme-handler/http
 xdg-mime default firefox.desktop x-scheme-handler/https
 echo "alias cp='gcp'" >> $casa/.bashrc
 echo "alias cp='gcp'" >> /root/.bashrc
-echo "alias update='apt-get update && apt-get -y dist-upgrade'" >> /root/.bashrc
+echo "alias update='apt update && apt -y full-upgrade && apt-get -y autoremove'" >> /root/.bashrc
 echo "alias subir='git add . && git commit -a && git push --all'" >> $casa/.bashrc
 sed -i 's/PRELINKING=unknown/PRELINKING=yes/g' /etc/default/prelink
 sed -i 's/PRELINK_OPTS=-mR/PRELINK_OPTS=-amR/g' /etc/default/prelink

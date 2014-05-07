@@ -1,4 +1,4 @@
 ubuntu-additional
 =================
 
-Extra installer for ubuntu
+Install aditional programs for several version of ubuntu
