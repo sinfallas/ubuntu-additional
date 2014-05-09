@@ -65,7 +65,7 @@ add-apt-repository -y ppa:vase/ppa
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 wget --output-document=/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/$(lsb_release -cs).list
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - 
-wget -q -O - http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc | apt-key add -
+# wget -q -O - http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc | apt-key add -
 # wget -q -O - http://deb.playonlinux.com/public.gpg | apt-key add -
 # wget http://deb.playonlinux.com/playonlinux_precise.list -O /etc/apt/sources.list.d/playonlinux.list
 apt-get -q update
