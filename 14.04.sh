@@ -61,10 +61,14 @@ add-apt-repository -y ppa:alexmurray/indicator-sensors-daily
 add-apt-repository -y ppa:team-xbmc/ppa
 add-apt-repository -y ppa:webupd8team/tor-browser
 add-apt-repository -y ppa:vase/ppa
+apt-add-repository -y ppa:gurqn/systray-trusty
+add-apt-repository -y ppa:lubuntu-dev/staging
+add-apt-repository -y ppa:ubuntu-toolchain-r/test
 # echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 wget --output-document=/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/$(lsb_release -cs).list
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - 
+echo "deb http://liquorix.net/debian sid main" >> /etc/apt/sources.list
 # wget -q -O - http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc | apt-key add -
 # wget -q -O - http://deb.playonlinux.com/public.gpg | apt-key add -
 # wget http://deb.playonlinux.com/playonlinux_precise.list -O /etc/apt/sources.list.d/playonlinux.list
@@ -72,6 +76,9 @@ apt-get -q update
 apt-get --allow-unauthenticated -y install medibuntu-keyring
 apt-get -q update
 apt-get -q -f -y --force-yes dist-upgrade
+
+# apt-get -y --force-yes install liquorix-keyrings gcc-4.7
+# apt-get -y install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
 
 apt-get -q -f -y --force-yes install build-essential linux-generic-lts-saucy-eol-upgrade linux-firmware linux-firmware-nonfree intel-microcode
 
