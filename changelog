@@ -1,0 +1,103 @@
+commit 289887ed6e87620615fd9c8d4df10be23ebf89c7 (HEAD, origin/master, origin/HEAD, master)
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Tue May 13 22:58:31 2014 -0430
+
+    * nuevos repositorios
+    * se agrega la funcion de instalar liquorix
+
+commit efed125a56179441b3c99ee828db0d89ac1c4300
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Thu May 8 21:49:14 2014 -0430
+
+    * comente una linea
+
+commit cc597d8877dfb4d8b9810a964883cdaeff384435
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Wed May 7 22:12:54 2014 -0430
+
+    * se agrega español al libreoffice
+
+commit 567a3f124d840e0fb8fe3b80f0a4de30b797668e
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Tue May 6 21:23:48 2014 -0430
+
+    * Cambios relacionados con el copyright
+
+commit 984c23f18397594e468144e4f90768d0d61fcf2c
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Sat Apr 26 15:35:11 2014 -0430
+
+    * misc
+
+commit 85a9b3b29a10f10051fa673c9bbf9143771c0c23
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Sat Apr 26 15:30:53 2014 -0430
+
+    * se agrega informacion de copyright
+
+commit c0b5490abfc894cc9c2df263ad87bce84093a1d8
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Sat Apr 26 15:21:27 2014 -0430
+
+    * correcciones en kvm
+
+commit 3301f27b23e7d00d58567925890750a227a541c2
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Sat Apr 26 13:57:32 2014 -0430
+
+    * se elimina la seccion relacionada con xen
+
+commit dac110e4d604d34223d234f0aaddc977782345e4
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Wed Apr 23 10:41:30 2014 -0430
+
+    * se agregan nuevos paquetes
+
+commit 0d1c1fe5ca84090f4e3e72e5e36daacc7f874e8c
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Fri Apr 18 21:50:28 2014 -0430
+
+    * cambio del repo para jupiter
+
+commit 8a6fd6c8fb92f6b37ae890377638623c2bd41e82
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Fri Apr 18 14:29:13 2014 -0430
+
+    * modificaciones a la lista de repos
+
+commit efa34fd6286ed2d173d95fa01e6544c24de471f4
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Thu Apr 17 22:59:27 2014 -0430
+
+    * limpieza
+
+commit 3ba5fcbab9268fb69074459579615b7bd4b5131a
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Thu Apr 17 22:57:29 2014 -0430
+
+    * nuevos nombres
+    * se crea script para 14.04
+
+commit 2e8d6f69d2709790a03f48d2330c65db5974d871 (tag: v1.0)
+Author: sinfallas <sinfallas@yahoo.com>
+Date:   Sun Mar 30 23:21:28 2014 -0430
+
+    * script for install games
+
+commit 8920ca93a5f765f272904cd582e5f00b15b4978c
+Author: sinfallas <sinfallas@yahoo.com>
+Date:   Sun Mar 30 23:03:19 2014 -0430
+
+    * liquorix
+
+commit 052261fb282e4c0f16d8a36656dc3a9fcbb8e24f
+Author: sinfallas <sinfallas@yahoo.com>
+Date:   Sun Mar 30 23:00:55 2014 -0430
+
+    * primer commit
+
+commit 2ab9785da6bf898073d99186385537b4e45ad3f7
+Author: Sinfallas <sinfallas@users.noreply.github.com>
+Date:   Sun Mar 30 20:25:00 2014 -0700
+
+    Initial commit
