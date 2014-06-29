@@ -1,4 +1,22 @@
-commit 289887ed6e87620615fd9c8d4df10be23ebf89c7 (HEAD, origin/master, origin/HEAD, master)
+commit 1d39b79c325e4e3da27dcd6d8958a97754d090b9 (HEAD, origin/master, origin/HEAD, master)
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Sun Jun 29 16:51:59 2014 -0430
+
+    * se agrega autojump
+
+commit 12ff9e942f37e0cc4e2430d510c85bf9dcdb1e0b (tag: v1.1)
+Author: Jesus Palencia <sinfallas@users.noreply.github.com>
+Date:   Tue Jun 3 11:43:32 2014 -0430
+
+    Create AUTHORS
+
+commit bf86f0c5cc61395ad1a3d68008a7da2a46c4e1df
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Thu May 15 14:10:00 2014 -0430
+
+    * se crea changelog
+
+commit 289887ed6e87620615fd9c8d4df10be23ebf89c7
 Author: sinfallas <sinfallas@gmail.com>
 Date:   Tue May 13 22:58:31 2014 -0430
 
