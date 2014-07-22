@@ -47,10 +47,8 @@ add-apt-repository -y ppa:a-v-shkop/chromium
 add-apt-repository -y ppa:webupd8team/y-ppa-manager
 add-apt-repository -y ppa:ubuntu-mozilla-security/ppa
 add-apt-repository -y ppa:thp/gpodder
-add-apt-repository -y ppa:n-muench/vlc2
 add-apt-repository -y ppa:diesch/testing
 add-apt-repository -y ppa:mumble/release
-add-apt-repository -y ppa:lubuntu-desktop/ppa
 add-apt-repository -y ppa:richardgv/compton
 add-apt-repository -y ppa:xubuntu-dev/xfce-4.10
 add-apt-repository -y ppa:rebuntu16/other-stuff 
@@ -80,13 +78,13 @@ apt-get -q -f -y --force-yes dist-upgrade
 # apt-get -y --force-yes install liquorix-keyrings gcc-4.7
 # apt-get -y install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
 
-apt-get -q -f -y --force-yes install build-essential linux-generic-lts-saucy-eol-upgrade linux-firmware linux-firmware-nonfree intel-microcode
+apt -y install build-essential linux-generic-lts-saucy-eol-upgrade linux-firmware linux-firmware-nonfree intel-microcode
 
-apt-get -q -f -y --force-yes install ubuntu-restricted-extras non-free-codecs w64codecs pulseaudio-equalizer preload prelink synaptic ppa-purge y-ppa-manager git xterm pv gcp localepurge bum sysv-rc-conf dkms grub-customizer ssh xserver-xephyr bleachbit macchanger grsync dconf-tools ubuntu-tweak gimp gimp-plugin-registry nautilus-image-converter darktable scribus inkscape calibre vlc audacity acetoneiso isomaster pdfedit gnome-sushi nautilus-dropbox google-chrome-stable chromium-browser-l10n google-talkplugin community-themes libdvdread4 filezilla mumble unetbootin libreoffice-l10n-es myspell-es ispanish autojump
+apt -y install ubuntu-restricted-extras non-free-codecs w64codecs pulseaudio-equalizer preload prelink synaptic ppa-purge y-ppa-manager git xterm pv gcp localepurge bum sysv-rc-conf dkms grub-customizer ssh xserver-xephyr bleachbit macchanger grsync dconf-tools ubuntu-tweak gimp gimp-plugin-registry nautilus-image-converter darktable scribus inkscape calibre vlc audacity acetoneiso isomaster pdfedit gnome-sushi nautilus-dropbox google-chrome-stable chromium-browser-l10n google-talkplugin community-themes libdvdread4 filezilla mumble unetbootin libreoffice-l10n-es myspell-es ispanish autojump
 
-apt-get -q -f -y --force-yes install pigz rar p7zip-full unace p7zip-rar sharutils mpack lha arj atool lzop
+apt -y install pigz rar p7zip-full unace p7zip-rar sharutils mpack lha arj atool lzop
 
-apt-get -q -f -y --force-yes install gsfonts-other t1-xfree86-nonfree ttf-dustin ttf-f500 ttf-isabella ttf-larabie-deco ttf-larabie-straight ttf-larabie-uncommon ttf-staypuft ttf-summersby ttf-ubuntu-title ttf-xfree86-nonfree xfonts-intl-european gsfonts-x11 ttf-bpg-georgian-fonts ttf-sjfonts
+apt -y install gsfonts-other t1-xfree86-nonfree ttf-dustin ttf-f500 ttf-isabella ttf-larabie-deco ttf-larabie-straight ttf-larabie-uncommon ttf-staypuft ttf-summersby ttf-ubuntu-title ttf-xfree86-nonfree xfonts-intl-european gsfonts-x11 ttf-bpg-georgian-fonts ttf-sjfonts
 fc-cache -f -v
 
 sed -i 's/\#   ForwardX11 no/ForwardX11 yes/g' /etc/ssh/ssh_config
@@ -97,23 +95,23 @@ sed -i 's/\#MaxStartups 10:30:60/MaxStartups 2/g' /etc/ssh/sshd_config
 echo -e "MaxAuthTries 2""\n""AllowUsers "$nombre"\n""X11UseLocalhost yes""\n""AddressFamily inet""\n""UseDNS no""\n""ClientAliveInterval 60">> /etc/ssh/sshd_config
 
 #unity
-apt-get -q -f -y --force-yes install myunity unsettings compizconfig-settings-manager 
+apt -y install myunity unsettings compizconfig-settings-manager 
 #xfce
-apt-get -q -f -y --force-yes install xubuntu-desktop xfce4-composite-editor xfce-theme-manager xfce4-power-manager-plugins
+apt -y install xubuntu-desktop xfce4-composite-editor xfce-theme-manager xfce4-power-manager-plugins
 #lxde
-apt-get -q -f -y --force-yes install lubuntu-desktop openbox openbox-xdgmenu compton nitrogen tint2 obconf obmenu rxvt-unicode menulibre hal hal-info halevt
+apt -y install lubuntu-desktop openbox openbox-xdgmenu compton nitrogen tint2 obconf obmenu rxvt-unicode menulibre hal hal-info halevt
 echo "@compton --config /home/$nombre/.config/compton.conf -b" >> /etc/xdg/lxsession/Lubuntu/autostart
 echo -e "thunar --daemon &""\n""nitrogen --restore &""\n""tint2 &""\n""compton --config /home/$nombre/.config/compton.conf -b &" >> $casa/.config/openbox/autostart
 #KDE
-apt-get -q -f -y --force-yes install kubuntu-desktop kubuntu-low-fat-settings kubuntu-restricted-extras
+apt -y install kubuntu-desktop kubuntu-low-fat-settings kubuntu-restricted-extras
 #gnome
-apt-get -q -f -y --force-yes install gnome-session-fallback gnome gnome-tweak-tool
+apt -y install gnome-session-fallback gnome gnome-tweak-tool
 #enlightenment
-apt-get -q -f -y --force-yes install enlightenment
+apt -y install enlightenment
 
-apt-get -q -f -y --force-yes install htop iotop iftop powertop jupiter lm-sensors hddtemp indicator-sensors
+apt -y install htop iotop iftop powertop jupiter lm-sensors hddtemp indicator-sensors
 
-apt-get -q -f -y --force-yes install playonlinux dosbox freeciv-client-gtk fceux curl pcsxr mupen64plus mupen64plus-extraplugins cutemupen
+apt -y install playonlinux dosbox freeciv-client-gtk fceux curl pcsxr mupen64plus mupen64plus-extraplugins cutemupen
 echo export WINEARCH=win32 >> $casa/.bashrc
 mkdir -p $casa/.dosbox
 sed -i 's/output=surface/output=overlay/g' $casa/.dosbox/dosbox-0.74.conf
@@ -127,9 +125,9 @@ sed -i 's/serial2=dummy/serial2=disabled/g' $casa/.dosbox/dosbox-0.74.conf
 sed -i 's/keyboardlayout=auto/keyboardlayout=es/g' $casa/.dosbox/dosbox-0.74.conf
 echo -e "mount c $casa/Dropbox/dosbox""\n""c:""\n""cls" >> $casa/.dosbox/dosbox-0.74.conf
 
-apt-get -q -f -y --force-yes install python-software-properties pkg-config software-properties-common xbmc
+apt -y install python-software-properties pkg-config software-properties-common xbmc
 
-apt-get -q -f -y --force-yes install linux-lowlatency virtualbox-4.3 apparmor-utils qemu qemu-kvm qemu-kvm-spice grub-firmware-qemu qemu-system qemu-user qemuctl vde2 spice-client-gtk python-spice-client-gtk virt-manager virt-goodies virt-viewer bridge-utils
+apt -y install linux-lowlatency virtualbox-4.3 apparmor-utils qemu qemu-kvm qemu-kvm-spice grub-firmware-qemu qemu-system qemu-user qemuctl vde2 spice-client-gtk python-spice-client-gtk virt-manager virt-goodies virt-viewer bridge-utils
 
 # virtualbox
 addgroup vboxusers

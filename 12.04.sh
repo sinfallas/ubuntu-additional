@@ -54,10 +54,8 @@ add-apt-repository -y ppa:a-v-shkop/chromium
 add-apt-repository -y ppa:webupd8team/y-ppa-manager
 add-apt-repository -y ppa:ubuntu-mozilla-security/ppa
 add-apt-repository -y ppa:thp/gpodder
-add-apt-repository -y ppa:n-muench/vlc2
 add-apt-repository -y ppa:diesch/testing
 add-apt-repository -y ppa:mumble/release
-add-apt-repository -y ppa:lubuntu-desktop/ppa
 add-apt-repository -y ppa:richardgv/compton
 add-apt-repository -y ppa:xubuntu-dev/xfce-4.10
 add-apt-repository -y ppa:rebuntu16/other-stuff 
