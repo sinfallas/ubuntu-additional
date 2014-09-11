@@ -20,8 +20,8 @@ echo "tmpfs /var/cache/samba tmpfs noatime,nodev 0 0" >> /etc/fstab
 echo "tmpfs /var/log tmpfs noatime,nodev 0 0" >> /etc/fstab
 echo "tmpfs /var/spool tmpfs noatime,nodev 0 0" >> /etc/fstab
 echo "tmpfs /var/tmp tmpfs noexec,nosuid,noatime,nodev 0 0" >> /etc/fstab
-#echo "tmpfs /home/$nombre/.cache tmpfs noatime,nodev 0 0" >> /etc/fstab
-#echo "tmpfs /home/$nombre/.thumbnails tmpfs noatime,nodev 0 0" >> /etc/fstab
+echo "tmpfs /home/$nombre/.cache tmpfs noatime,nodev 0 0" >> /etc/fstab
+echo "tmpfs /home/$nombre/.thumbnails tmpfs noatime,nodev 0 0" >> /etc/fstab
 echo 'INTEL_BATCH="1"' >> /etc/environment
 echo "options rtl8192ce ips=0 swenc=1 fwlps=0 swlps=0" >> /etc/modprobe.d/rtl8192ce.conf
 sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="elevator=deadline drm.vblankoffdelay=1 i915.i915_enable_fbc=1 i915.i915_enable_rc6=1 i915.lvds_downclock=1 nordrand panic=10 quiet splash"/g' /etc/default/grub
@@ -129,28 +129,6 @@ echo -e "mount c $casa/Dropbox/dosbox""\n""c:""\n""cls" >> $casa/.dosbox/dosbox-
 apt-get -q -f -y --force-yes install python-software-properties pkg-config software-properties-common xbmc
 
 apt-get -q -f -y --force-yes install linux-lowlatency virtualbox-4.3 apparmor-utils kvm qemu-kvm-extras qemu qemu-kvm qemu-kvm-spice grub-firmware-qemu qemu-system qemu-user qemuctl vde2 spice-client-gtk python-spice-client-gtk virt-manager virt-goodies virt-viewer bridge-utils
-
-# xcp-xapi xen-tools xenwatch openvswitch-switch openvswitch-datapath-source ubuntu-vm-builder randomize-lines uml-utilities socat
-#apt-get -s install umview umview-mod-umfuseiso9660 umview-mod-umfuseext2 umview-mod-umlwip umview-mod-umdevtap libiso9660-dev libfuse-dev libpcap-dev
-
-# xen
-#sed -i 's/\#\(xend-http-server no\)/\(xend-http-server yes\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-unix-server no\)/\(xend-unix-server yes\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-port            8000\)/\(xend-port            8000\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(network-script network-bridge\)/\(network-script network-bridge\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(logfile \/var\/log\/xen\/xend.log\)/\(logfile \/var\/log\/xen\/xend.log\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-tcp-xmlrpc-server no\)/\(xend-tcp-xmlrpc-server yes\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-tcp-xmlrpc-server-port 8006\)/\(xend-tcp-xmlrpc-server-port 8006\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-unix-xmlrpc-server yes\)/\(xend-unix-xmlrpc-server yes\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-unix-path \/var\/lib\/xend\/xend-socket\)/\(xend-unix-path \/var\/lib\/xend\/xend-socket\)/g' /etc/xen/xend-config.sxp
-#sed -i 's/\#\(xend-tcp-xmlrpc-server-address 'localhost'\)/\(xend-tcp-xmlrpc-server-address 'localhost'\)/g' /etc/xen/xend-config.sxp
-#addgroup libvirtd
-#adduser $nombre libvirtd
-#mkdir -p /usr/lib64
-#ln -s /usr/lib/xen-4.1 /usr/lib/xen
-#ln -s /usr/lib/xen-4.1 /usr/lib64/xen
-#echo export VIRSH_DEFAULT_CONNECT_URI=xen:/// >> $casa/.bashrc
-#module-assistant auto-install openvswitch-datapath
 
 # virtualbox
 addgroup vboxusers

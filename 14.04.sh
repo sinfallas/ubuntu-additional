@@ -76,9 +76,6 @@ apt-get --allow-unauthenticated -y install medibuntu-keyring
 apt-get -q update
 apt-get -q -f -y --force-yes dist-upgrade
 
-# apt-get -y --force-yes install liquorix-keyrings gcc-4.7
-# apt-get -y install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
-
 apt -y install build-essential linux-generic-lts-saucy-eol-upgrade linux-firmware linux-firmware-nonfree intel-microcode
 
 apt -y install ubuntu-restricted-extras non-free-codecs w64codecs pulseaudio-equalizer preload prelink synaptic ppa-purge y-ppa-manager git xterm pv gcp localepurge bum sysv-rc-conf dkms grub-customizer ssh xserver-xephyr bleachbit macchanger grsync dconf-tools ubuntu-tweak gimp gimp-plugin-registry nautilus-image-converter darktable scribus inkscape calibre vlc audacity acetoneiso isomaster pdfedit gnome-sushi nautilus-dropbox google-chrome-stable chromium-browser-l10n google-talkplugin community-themes libdvdread4 filezilla mumble unetbootin libreoffice-l10n-es myspell-es ispanish autojump ttf-ancient-fonts
