@@ -6,8 +6,6 @@ exit 0
 fi
 nombre=$(whoami)
 casa=/home/$nombre
-update-pciids
-update-usbids
 echo -e "net.ipv6.conf.all.disable_ipv6 = 1""\n""net.ipv6.conf.default.disable_ipv6 = 1""\n""net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.d/60-disableipv6.conf
 start procps
 echo -e 'Section "Device"'"\n"' Identifier "intel"'"\n"' Driver "intel"'"\n"'BusID 	"PCI:0:2:0"'"\n"' Option "AccelMethod" "SNA"'"\n"' Option "SwapbuffersWait" "false"'"\n"' Option "Tiling" "true"'"\n"' Option "BackingStore" "True"'"\n"' Option "XvMC" "on"'"\n"' Option "TripleBuffer" "true"'"\n"' Option "DRI" "true"'"\n"'EndSection' >> /etc/X11/xorg.conf
@@ -43,7 +41,6 @@ add-apt-repository -y ppa:danielrichter2007/grub-customizer
 add-apt-repository -y ppa:nilarimogard/webupd8
 add-apt-repository -y ppa:tualatrix/ppa
 add-apt-repository -y ppa:webupd8team/unstable
-echo "deb http://ppa.launchpad.net/jolicloud-team/ppa/ubuntu raring main" >> /etc/apt/sources.list
 add-apt-repository -y ppa:a-v-shkop/chromium
 add-apt-repository -y ppa:webupd8team/y-ppa-manager
 add-apt-repository -y ppa:ubuntu-mozilla-security/ppa
@@ -63,21 +60,18 @@ add-apt-repository -y ppa:vase/ppa
 apt-add-repository -y ppa:gurqn/systray-trusty
 add-apt-repository -y ppa:lubuntu-dev/staging
 add-apt-repository -y ppa:ubuntu-toolchain-r/test
-# echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list
+add-apt-repository -y ppa:webupd8team/java
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 wget --output-document=/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/$(lsb_release -cs).list
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - 
 echo "deb http://liquorix.net/debian sid main" >> /etc/apt/sources.list
-# wget -q -O - http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc | apt-key add -
-# wget -q -O - http://deb.playonlinux.com/public.gpg | apt-key add -
-# wget http://deb.playonlinux.com/playonlinux_precise.list -O /etc/apt/sources.list.d/playonlinux.list
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A902DDA375E52366
-apt-get -q update
+apt update
 apt-get --allow-unauthenticated -y install medibuntu-keyring
-apt-get -q update
-apt-get -q -f -y --force-yes dist-upgrade
+apt update
+apt -y --force-yes full-upgrade
 
-apt -y install build-essential linux-generic-lts-saucy-eol-upgrade linux-firmware linux-firmware-nonfree intel-microcode
+apt -y install build-essential linux-generic-lts-saucy-eol-upgrade linux-firmware linux-firmware-nonfree intel-microcode hwdata
 
 apt -y install ubuntu-restricted-extras non-free-codecs w64codecs pulseaudio-equalizer preload prelink synaptic ppa-purge y-ppa-manager git xterm pv gcp localepurge bum sysv-rc-conf dkms grub-customizer ssh xserver-xephyr bleachbit macchanger grsync dconf-tools ubuntu-tweak gimp gimp-plugin-registry nautilus-image-converter darktable scribus inkscape calibre vlc audacity acetoneiso isomaster pdfedit gnome-sushi nautilus-dropbox google-chrome-stable chromium-browser-l10n google-talkplugin community-themes libdvdread4 filezilla mumble unetbootin libreoffice-l10n-es myspell-es ispanish autojump ttf-ancient-fonts
 
@@ -110,6 +104,8 @@ apt -y install enlightenment
 
 apt -y install htop iotop iftop powertop jupiter lm-sensors hddtemp indicator-sensors
 
+apt -y install oracle-java8-installer
+
 apt -y install playonlinux dosbox freeciv-client-gtk fceux curl pcsxr mupen64plus mupen64plus-extraplugins cutemupen
 echo export WINEARCH=win32 >> $casa/.bashrc
 mkdir -p $casa/.dosbox
@@ -126,7 +122,7 @@ echo -e "mount c $casa/Dropbox/dosbox""\n""c:""\n""cls" >> $casa/.dosbox/dosbox-
 
 apt -y install python-software-properties pkg-config software-properties-common xbmc
 
-apt -y install linux-lowlatency virtualbox-4.3 apparmor-utils qemu qemu-kvm qemu-kvm-spice grub-firmware-qemu qemu-system qemu-user qemuctl vde2 spice-client-gtk python-spice-client-gtk virt-manager virt-goodies virt-viewer bridge-utils
+apt -y install linux-lowlatency apparmor-utils qemu qemu-kvm qemu-kvm-spice grub-firmware-qemu qemu-system qemu-user qemuctl vde2 spice-client-gtk python-spice-client-gtk virt-manager virt-goodies virt-viewer bridge-utils
 
 # virtualbox
 addgroup vboxusers
