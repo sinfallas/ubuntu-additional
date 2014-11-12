@@ -2,7 +2,7 @@
 #elaborado por sinfallas
 if [ $USER != root ]; then
 echo "Error: run as root"
-exit 0
+exit 1
 fi
 nombre=$(whoami)
 casa=/home/$nombre
