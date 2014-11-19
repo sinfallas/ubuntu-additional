@@ -1,4 +1,22 @@
-commit f936cd49e8f431adb0e7b683ebe37deba71953ab (HEAD, origin/master, origin/HEAD, master)
+commit 4a36726c1f14102943d3591ed7c55d75e07988c8 (HEAD, origin/master, origin/HEAD, master)
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Wed Nov 19 12:57:39 2014 -0430
+
+    * se cambia el nombre del script game para hacerlo mas usable
+
+commit 3520473f787b05457c36242cb9813550a9649c1f (tag: v1.1.2)
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Wed Nov 19 10:48:50 2014 -0430
+
+    Update README.md
+
+commit f8398a9f34ee0159a04803eb441a3f5da4a5552f
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Fri Nov 14 19:43:56 2014 -0430
+
+    * changelog
+
+commit f936cd49e8f431adb0e7b683ebe37deba71953ab
 Author: sinfallas <sinfallas@gmail.com>
 Date:   Fri Nov 14 19:43:44 2014 -0430
 
