@@ -1,5 +1,4 @@
 #!/bin/bash
-#elaborado por sinfallas
 if [ $USER != root ]; then
 echo "Error: run as root"
 exit 1
