@@ -1,4 +1,28 @@
-commit 9aa34a48572a748d86e519927cdae16fd3366e87 (HEAD, origin/master, origin/HEAD, master)
+commit 64c87919f761d942d4c004e2c2766b7840f9b405 (HEAD, origin/master, origin/HEAD, master)
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Mon Dec 1 12:33:40 2014 -0430
+
+    Update games.sh
+
+commit 5b98c8e6535620583187a14ae6361e5ca0b89830
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Mon Dec 1 12:32:30 2014 -0430
+
+    Update games.sh
+
+commit 9648929591d44f414850a0a2e08b2765d67b2c14
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Mon Dec 1 11:44:22 2014 -0430
+
+    Update games.sh
+
+commit f0c3af775c36cc769947f3ea44aeb09bc301df7d
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Mon Nov 24 01:09:53 2014 -0430
+
+    * changelog
+
+commit 9aa34a48572a748d86e519927cdae16fd3366e87
 Author: sinfallas <sinfallas@gmail.com>
 Date:   Mon Nov 24 01:09:41 2014 -0430
 
