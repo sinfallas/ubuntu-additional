@@ -12,12 +12,12 @@ echo -e "vm.swappiness = 10""\n""vm.dirty_background_ratio = 15""\n""vm.dirty_ra
 sysctl -p
 echo "* hard nproc 1000" >> /etc/security/limits.conf
 echo -e "/dev/sda {""\n"" lookahead = on""\n"" write_cache = on""\n"" spindown_time = 18""\n""}" >> /etc/hdparm.conf
-echo "tmpfs /tmp tmpfs noexec,nosuid,noatime,nodev 0 0" >> /etc/fstab
-echo "tmpfs /var/cache/apt/archives tmpfs noatime,nodev 0 0" >> /etc/fstab
-echo "tmpfs /var/cache/samba tmpfs noatime,nodev 0 0" >> /etc/fstab
-echo "tmpfs /var/log tmpfs noatime,nodev 0 0" >> /etc/fstab
-echo "tmpfs /var/spool tmpfs noatime,nodev 0 0" >> /etc/fstab
-echo "tmpfs /var/tmp tmpfs noexec,nosuid,noatime,nodev 0 0" >> /etc/fstab
+echo "tmpfs /tmp tmpfs noexec,sync,nosuid,noatime,nodev 0 0" >> /etc/fstab
+echo "tmpfs /var/cache/apt/archives tmpfs noatime,sync,nodev 0 0" >> /etc/fstab
+echo "tmpfs /var/cache/samba tmpfs noatime,sync,nodev 0 0" >> /etc/fstab
+echo "tmpfs /var/log tmpfs noatime,sync,nodev 0 0" >> /etc/fstab
+echo "tmpfs /var/spool tmpfs noatime,sync,nodev 0 0" >> /etc/fstab
+echo "tmpfs /var/tmp tmpfs noexec,sync,nosuid,noatime,nodev 0 0" >> /etc/fstab
 echo 'INTEL_BATCH="1"' >> /etc/environment
 echo "options rtl8192ce ips=0 swenc=1 fwlps=0 swlps=0" >> /etc/modprobe.d/rtl8192ce.conf
 sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="elevator=deadline drm.vblankoffdelay=1 i915.i915_enable_fbc=1 i915.i915_enable_rc6=1 i915.lvds_downclock=1 nordrand panic=10 quiet splash"/g' /etc/default/grub
