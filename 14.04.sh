@@ -32,7 +32,6 @@ cd $casa
 add-apt-repository -y ppa:xorg-edgers/ppa
 add-apt-repository -y ppa:glasen/intel-driver
 add-apt-repository -y ppa:jacob/virtualisation
-add-apt-repository -y ppa:libreoffice/ppa
 add-apt-repository -y ppa:ubuntu-wine/ppa
 add-apt-repository -y ppa:otto-kesselgulasch/gimp
 add-apt-repository -y ppa:pmjdebruijn/darktable-release-plus
@@ -47,17 +46,13 @@ add-apt-repository -y ppa:thp/gpodder
 add-apt-repository -y ppa:diesch/testing
 add-apt-repository -y ppa:mumble/release
 add-apt-repository -y ppa:richardgv/compton
-add-apt-repository -y ppa:xubuntu-dev/xfce-4.10
 add-apt-repository -y ppa:rebuntu16/other-stuff 
-add-apt-repository -y ppa:kubuntu-ppa/backports
 add-apt-repository -y ppa:gnome3-team/gnome3
 add-apt-repository -y ppa:ricotz/testing
 add-apt-repository -y ppa:alexmurray/indicator-sensors-daily
-add-apt-repository -y ppa:team-xbmc/ppa
 add-apt-repository -y ppa:webupd8team/tor-browser
 add-apt-repository -y ppa:vase/ppa
 apt-add-repository -y ppa:gurqn/systray-trusty
-add-apt-repository -y ppa:lubuntu-dev/staging
 add-apt-repository -y ppa:ubuntu-toolchain-r/test
 add-apt-repository -y ppa:webupd8team/java
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
@@ -74,11 +69,6 @@ apt -y install build-essential linux-generic-lts-saucy-eol-upgrade linux-firmwar
 
 apt -y install ubuntu-restricted-extras non-free-codecs w64codecs pulseaudio-equalizer preload prelink synaptic ppa-purge y-ppa-manager git xterm pv gcp localepurge bum sysv-rc-conf dkms grub-customizer ssh xserver-xephyr bleachbit macchanger grsync dconf-tools ubuntu-tweak gimp gimp-plugin-registry nautilus-image-converter darktable scribus inkscape calibre vlc audacity acetoneiso isomaster pdfedit gnome-sushi nautilus-dropbox google-chrome-stable chromium-browser-l10n google-talkplugin community-themes libdvdread4 filezilla mumble unetbootin libreoffice-l10n-es myspell-es ispanish autojump ttf-ancient-fonts
 
-apt -y install pigz rar p7zip-full unace p7zip-rar sharutils mpack lha arj atool lzop
-
-apt -y install gsfonts-other t1-xfree86-nonfree ttf-dustin ttf-f500 ttf-isabella ttf-larabie-deco ttf-larabie-straight ttf-larabie-uncommon ttf-staypuft ttf-summersby ttf-ubuntu-title ttf-xfree86-nonfree xfonts-intl-european gsfonts-x11 ttf-bpg-georgian-fonts ttf-sjfonts
-fc-cache -f -v
-
 sed -i 's/\#   ForwardX11 no/ForwardX11 yes/g' /etc/ssh/ssh_config
 sed -i 's/Port 22/Port 2222/g' /etc/ssh/sshd_config
 sed -i 's/LoginGraceTime 120/LoginGraceTime 20/g' /etc/ssh/sshd_config
@@ -88,38 +78,10 @@ echo -e "MaxAuthTries 2""\n""AllowUsers "$nombre"\n""X11UseLocalhost yes""\n""Ad
 
 #unity
 apt -y install myunity unsettings compizconfig-settings-manager 
-#xfce
-apt -y install xubuntu-desktop xfce4-composite-editor xfce-theme-manager xfce4-power-manager-plugins
-#lxde
-apt -y install lubuntu-desktop openbox openbox-xdgmenu compton nitrogen tint2 obconf obmenu rxvt-unicode menulibre hal hal-info halevt
-echo "@compton --config /home/$nombre/.config/compton.conf -b" >> /etc/xdg/lxsession/Lubuntu/autostart
-echo -e "thunar --daemon &""\n""nitrogen --restore &""\n""tint2 &""\n""compton --config /home/$nombre/.config/compton.conf -b &" >> $casa/.config/openbox/autostart
-#KDE
-apt -y install kubuntu-desktop kubuntu-low-fat-settings kubuntu-restricted-extras
-#gnome
-apt -y install gnome-session-fallback gnome gnome-tweak-tool
-#enlightenment
-apt -y install enlightenment
 
 apt -y install htop iotop iftop powertop jupiter lm-sensors hddtemp indicator-sensors
 
 apt -y install oracle-java8-installer
-
-apt -y install playonlinux dosbox freeciv-client-gtk fceux curl pcsxr mupen64plus mupen64plus-extraplugins cutemupen
-echo export WINEARCH=win32 >> $casa/.bashrc
-mkdir -p $casa/.dosbox
-sed -i 's/output=surface/output=overlay/g' $casa/.dosbox/dosbox-0.74.conf
-sed -i 's/sensitivity=100/sensitivity=15/g' $casa/.dosbox/dosbox-0.74.conf
-sed -i 's/language=/language=spanish-0.74.lang/g' $casa/.dosbox/dosbox-0.74.conf
-sed -i 's/memsize=16/memsize=63/g' $casa/.dosbox/dosbox-0.74.conf
-sed -i 's/prebuffer=20/prebuffer=50/g' $casa/.dosbox/dosbox-0.74.conf
-sed -i 's/oplemu=default/oplemu=fast/g' $casa/.dosbox/dosbox-0.74.conf
-sed -i 's/serial1=dummy/serial1=disabled/g' $casa/.dosbox/dosbox-0.74.conf
-sed -i 's/serial2=dummy/serial2=disabled/g' $casa/.dosbox/dosbox-0.74.conf
-sed -i 's/keyboardlayout=auto/keyboardlayout=es/g' $casa/.dosbox/dosbox-0.74.conf
-echo -e "mount c $casa/Dropbox/dosbox""\n""c:""\n""cls" >> $casa/.dosbox/dosbox-0.74.conf
-
-apt -y install python-software-properties pkg-config software-properties-common xbmc
 
 apt -y install linux-lowlatency apparmor-utils qemu qemu-kvm qemu-kvm-spice grub-firmware-qemu qemu-system qemu-user qemuctl vde2 spice-client-gtk python-spice-client-gtk virt-manager virt-goodies virt-viewer bridge-utils
 
@@ -155,9 +117,6 @@ prelink -amvR
 /etc/cron.daily/prelink
 /usr/share/doc/libdvdread4/install-css.sh
 
-apt-get clean
-apt-get autoclean
-apt-get -y autoremove
 clear
 echo Finalizado se recomienda reiniciar, elaborado para ubuntu 64 bits por sinfallas.
 exit 0
