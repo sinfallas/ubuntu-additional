@@ -1,4 +1,22 @@
-commit 64c87919f761d942d4c004e2c2766b7840f9b405 (HEAD, origin/master, origin/HEAD, master)
+commit cdec2a16ca7ea7ad78f09e17353de9f4bef04aa4 (HEAD, origin/master, origin/HEAD, master)
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Mon Dec 29 23:01:09 2014 -0430
+
+    * se separa el script 14.04 en unidades mas sencillas
+
+commit 82f3fb8df5f855e414f4ef640bcf596072ccee72
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Wed Dec 17 21:27:34 2014 -0430
+
+    * se agrega sync a las opciones del fstab
+
+commit a9f4fab2e939f9c1c36ba22d38ddc79a2056ec83
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Wed Dec 3 15:51:53 2014 -0430
+
+    * changelog
+
+commit 64c87919f761d942d4c004e2c2766b7840f9b405
 Author: Jose Perez <sinfallas@users.noreply.github.com>
 Date:   Mon Dec 1 12:33:40 2014 -0430
 
