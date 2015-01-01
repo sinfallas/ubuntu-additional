@@ -1,4 +1,16 @@
-commit cdec2a16ca7ea7ad78f09e17353de9f4bef04aa4 (HEAD, origin/master, origin/HEAD, master)
+commit 26c0cb112b44a05770d7d36236e2857b3c00c170 (HEAD, origin/master, origin/HEAD, master)
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Thu Jan 1 12:04:31 2015 -0430
+
+    * se crean los script monitoring y virtualization
+
+commit da4384c4b6e9a985ef90d36eb0e7aba9fbf1f477
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Mon Dec 29 23:02:02 2014 -0430
+
+    * changelog
+
+commit cdec2a16ca7ea7ad78f09e17353de9f4bef04aa4
 Author: sinfallas <sinfallas@gmail.com>
 Date:   Mon Dec 29 23:01:09 2014 -0430
 
