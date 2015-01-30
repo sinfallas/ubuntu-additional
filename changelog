@@ -1,4 +1,16 @@
-commit a9fdc029eaddfebb0a0e01ccf140ceabe826a5a1 (HEAD, origin/master, origin/HEAD, master)
+commit bb0211ae07a42d5f01b3d3bff94a08ca15b00dba (HEAD, origin/master, origin/HEAD, master)
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Thu Jan 29 19:55:11 2015 -0430
+
+    * se agrega bchunk
+
+commit cad2b58e12eab4b92e2b7e5232316e020f70427b
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Thu Jan 8 00:48:29 2015 -0430
+
+    * changelog
+
+commit a9fdc029eaddfebb0a0e01ccf140ceabe826a5a1
 Author: sinfallas <sinfallas@gmail.com>
 Date:   Thu Jan 8 00:47:30 2015 -0430
 
