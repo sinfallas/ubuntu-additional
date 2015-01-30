@@ -55,7 +55,7 @@ apt -y --force-yes full-upgrade
 
 apt -y install build-essential linux-firmware linux-firmware-nonfree intel-microcode hwdata ubuntu-restricted-extras non-free-codecs w64codecs pulseaudio-equalizer preload prelink synaptic ppa-purge y-ppa-manager xterm pv gcp localepurge bum sysv-rc-conf dkms grub-customizer 
 
-apt -y install grsync dconf-tools ubuntu-tweak gimp gimp-plugin-registry nautilus-image-converter darktable scribus inkscape calibre vlc audacity acetoneiso isomaster pdfedit gnome-sushi nautilus-dropbox google-chrome-stable chromium-browser-l10n google-talkplugin community-themes libdvdread4 filezilla mumble unetbootin 
+apt -y install grsync dconf-tools ubuntu-tweak gimp gimp-plugin-registry nautilus-image-converter darktable scribus inkscape calibre vlc audacity acetoneiso isomaster pdfedit gnome-sushi nautilus-dropbox google-chrome-stable chromium-browser-l10n google-talkplugin community-themes libdvdread4 filezilla mumble unetbootin bchunk
 
 apt -y install myunity unsettings compizconfig-settings-manager 
 
