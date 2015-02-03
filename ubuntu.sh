@@ -8,12 +8,12 @@ casa=/home/$nombre
 echo -e "net.ipv6.conf.all.disable_ipv6 = 1""\n""net.ipv6.conf.default.disable_ipv6 = 1""\n""net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.d/60-disableipv6.conf
 start procps
 echo "* hard nproc 1000" >> /etc/security/limits.conf
-echo "tmpfs /tmp tmpfs noexec,sync,nosuid,noatime,nodev 0 0" >> /etc/fstab
-echo "tmpfs /var/cache/apt/archives tmpfs noatime,sync,nodev 0 0" >> /etc/fstab
-echo "tmpfs /var/cache/samba tmpfs noatime,sync,nodev 0 0" >> /etc/fstab
-echo "tmpfs /var/log tmpfs noatime,sync,nodev 0 0" >> /etc/fstab
-echo "tmpfs /var/spool tmpfs noatime,sync,nodev 0 0" >> /etc/fstab
-echo "tmpfs /var/tmp tmpfs noexec,sync,nosuid,noatime,nodev 0 0" >> /etc/fstab
+echo "tmpfs /tmp tmpfs noexec,async,nosuid,noatime,nodev 0 0" >> /etc/fstab
+echo "tmpfs /var/cache/apt/archives tmpfs noatime,async,nodev 0 0" >> /etc/fstab
+echo "tmpfs /var/cache/samba tmpfs noatime,async,nodev 0 0" >> /etc/fstab
+echo "tmpfs /var/log tmpfs noatime,async,nodev 0 0" >> /etc/fstab
+echo "tmpfs /var/spool tmpfs noatime,async,nodev 0 0" >> /etc/fstab
+echo "tmpfs /var/tmp tmpfs noexec,async,nosuid,noatime,nodev 0 0" >> /etc/fstab
 echo 'INTEL_BATCH="1"' >> /etc/environment
 sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="elevator=deadline drm.vblankoffdelay=1 i915.i915_enable_fbc=1 i915.i915_enable_rc6=1 i915.lvds_downclock=1 nordrand panic=10 quiet splash"/g' /etc/default/grub
 update-grub2
