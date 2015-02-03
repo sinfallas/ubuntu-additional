@@ -1,4 +1,16 @@
-commit bb0211ae07a42d5f01b3d3bff94a08ca15b00dba (HEAD, origin/master, origin/HEAD, master)
+commit c66c3dae39ddeb845cd705180d757bd0bb656b7e (HEAD, origin/master, origin/HEAD, master)
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Mon Feb 2 22:25:47 2015 -0430
+
+    * se corrigen parametros del fstab
+
+commit 7f494c7db573a7216528b9105220bc4422240ab6
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Thu Jan 29 19:55:45 2015 -0430
+
+    * changelog
+
+commit bb0211ae07a42d5f01b3d3bff94a08ca15b00dba
 Author: sinfallas <sinfallas@gmail.com>
 Date:   Thu Jan 29 19:55:11 2015 -0430
 
