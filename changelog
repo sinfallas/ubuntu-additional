@@ -1,4 +1,23 @@
-commit c66c3dae39ddeb845cd705180d757bd0bb656b7e (HEAD, origin/master, origin/HEAD, master)
+commit 7236ad22ad33d3aee9d171b4decebeb1b8610dc0 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Feb 21 10:50:13 2015 -0430
+
+    * se elimina el script de virtualizacion porque tiene su propio repo
+    * se agrega el archivo para activar lla hibernacion
+
+commit 6eb287a4fd58b81c534c14deffdfab63a01e909b
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Feb 20 20:02:10 2015 -0430
+
+    * bugfix
+
+commit 7375201122acb7955bbf31c2bbca3bea1e8a6d85
+Author: sinfallas <sinfallas@gmail.com>
+Date:   Mon Feb 2 22:26:10 2015 -0430
+
+    * changelog
+
+commit c66c3dae39ddeb845cd705180d757bd0bb656b7e
 Author: sinfallas <sinfallas@gmail.com>
 Date:   Mon Feb 2 22:25:47 2015 -0430
 
