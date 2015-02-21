@@ -25,7 +25,6 @@ cd $casa
 
 # repositorios
 add-apt-repository -y ppa:xorg-edgers/ppa
-add-apt-repository -y ppa:glasen/intel-driver
 add-apt-repository -y ppa:jacob/virtualisation
 add-apt-repository -y ppa:ubuntu-wine/ppa
 add-apt-repository -y ppa:otto-kesselgulasch/gimp
