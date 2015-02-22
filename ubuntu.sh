@@ -19,9 +19,7 @@ sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="
 update-grub2
 sed -i 's/127.0.0.1	localhost/127.0.0.1	localhost $(hostname)/g' /etc/hosts
 echo -e "[Re-enable hibernate by default]""\n""Identity=unix-user:*""\n""Action=org.freedesktop.upower.hibernate""\n""ResultActive=yes" >> /etc/polkit-1/localauthority/50-local.d/com.ubuntu.desktop.pkla
-cd /etc/xdg/autostart/
-sed --in-place 's/NoDisplay=true/NoDisplay=false/g' *.desktop
-cd $casa
+sed --in-place 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 
 # repositorios
 add-apt-repository -y ppa:xorg-edgers/ppa
