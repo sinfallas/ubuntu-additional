@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ $USER != root ]; then
-echo "Error: run as root"
+if [[ $USER != root ]]; then
+echo -e "\e[00;31mERROR: must be root\e[00m"
 exit 1
 fi
 add-apt-repository -y ppa:lubuntu-dev/staging
@@ -10,5 +10,5 @@ echo "@compton --config /home/$nombre/.config/compton.conf -b" >> /etc/xdg/lxses
 echo -e "thunar --daemon &""\n""nitrogen --restore &""\n""tint2 &""\n""compton --config /home/$nombre/.config/compton.conf -b &" >> $casa/.config/openbox/autostart
 apt-get clean
 clear
-echo "Finalizado..."
+echo -e "\e[00;1;92mFinished...\e[00m"
 exit 0

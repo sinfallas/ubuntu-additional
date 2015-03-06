@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ $USER != root ]; then
-echo "Error: run as root"
+if [[ $USER != root ]]; then
+echo -e "\e[00;31mERROR: must be root\e[00m"
 exit 1
 fi
 add-apt-repository -y ppa:libreoffice/ppa
@@ -10,5 +10,5 @@ apt -y install gsfonts-other t1-xfree86-nonfree ttf-dustin ttf-f500 ttf-isabella
 fc-cache -f -v
 apt-get clean
 clear
-echo "Finalizado..."
+echo -e "\e[00;1;92mFinished...\e[00m"
 exit 0

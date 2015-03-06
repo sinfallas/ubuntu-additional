@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ $USER != root ]; then
-echo "Error: run as root"
+if [[ $USER != root ]]; then
+echo -e "\e[00;31mERROR: must be root\e[00m"
 exit 1
 fi
 nombre=$(whoami)
@@ -63,5 +63,5 @@ prelink -amvR
 /usr/share/doc/libdvdread4/install-css.sh
 
 clear
-echo Finalizado se recomienda reiniciar, elaborado para ubuntu 64 bits por sinfallas.
+echo -e "\e[00;1;92mFinished...\e[00m"
 exit 0

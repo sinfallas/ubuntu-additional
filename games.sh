@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ $USER != root ]; then
-echo "Error: debes ser root"
+if [[ $USER != root ]]; then
+echo -e "\e[00;31mERROR: must be root\e[00m"
 exit 1
 fi
 nombre=$(whoami)
@@ -23,5 +23,5 @@ sed -i 's/keyboardlayout=auto/keyboardlayout=es/g' $casa/.dosbox/dosbox-0.74.con
 echo -e "mount c $casa/Dropbox/dosbox""\n""c:""\n""cls" >> $casa/.dosbox/dosbox-0.74.conf
 apt-get clean
 clear
-echo "Finalizado..."
+echo -e "\e[00;1;92mFinished...\e[00m"
 exit 0
