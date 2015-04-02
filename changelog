@@ -1,4 +1,16 @@
-commit 907e1b54a12fde6072825e52dc1f4e7006eaa02d (HEAD, origin/master, origin/HEAD, master)
+commit d9116d9424cb50c14bb828a6019a962610d011e3 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Thu Apr 2 12:16:48 2015 -0430
+
+    * se agrega el archivo fstab
+
+commit 6b16bbfeee2f09e8a8de0c9861ed331ae290cdbc (tag: v2.0)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Mar 6 17:09:57 2015 -0430
+
+    * changelog
+
+commit 907e1b54a12fde6072825e52dc1f4e7006eaa02d
 Author: jose perez <sinfallas@gmail.com>
 Date:   Fri Mar 6 17:09:30 2015 -0430
 
