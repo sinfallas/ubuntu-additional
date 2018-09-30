@@ -1,4 +1,10 @@
-commit db4d8756e2256224cda7c15e79c028d18ab8aa85 (HEAD, origin/master, origin/HEAD, master)
+commit 693f4ce2481aacedf8c32c5643416619f3a1991b (HEAD -> master, tag: v2.3, origin/master, origin/HEAD)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Mon Feb 29 21:38:37 2016 -0430
+
+    * changelog
+
+commit db4d8756e2256224cda7c15e79c028d18ab8aa85
 Author: jose perez <sinfallas@gmail.com>
 Date:   Mon Feb 29 21:38:23 2016 -0430
 
@@ -318,7 +324,7 @@ Date:   Sun Oct 12 20:50:56 2014 -0430
 
     * se actualizan repositorios y se elimina el soporte a ubuntu 12.04
 
-commit c8b9861b73643f33046f8d3fc9e92a3929441a53 (tag: v1.1.1)
+commit c8b9861b73643f33046f8d3fc9e92a3929441a53
 Author: sinfallas <sinfallas@gmail.com>
 Date:   Thu Oct 9 15:32:29 2014 -0430
 
